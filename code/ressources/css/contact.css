@@ -1,0 +1,127 @@
+.formulaire-contact {
+    max-width: 880px;
+    margin-bottom: 5rem;
+}
+
+.formulaire-contact .champ-conteneur {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.formulaire-contact .label-champ {
+    margin-bottom: 0.5rem;
+}
+
+.formulaire-contact .champ {
+    padding: 1rem 0.5rem;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.formulaire-contact .liste-choix {
+    display: flex;
+    align-items: center;
+    column-gap: 4rem;
+    font-size: 1.05rem;
+}
+
+.formulaire-contact .liste-choix .choix {
+    display: flex;
+    align-items: center;
+    column-gap: 0.6rem;
+    white-space: nowrap;
+}
+
+.formulaire-contact .liste-choix input[type="radio"] {
+    --active-color: #1453ff;
+    --border-color: #999;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 0;
+    flex: 1 0 auto;
+    border: 2px solid var(--border-color);
+    transition: 150ms border ease-in 0.15s, 0.2s background ease-in;
+    background: transparent;
+    position: relative;
+    background-color: #fff;
+
+    &:hover {
+        border-color: oklch(from var(--border-color) calc(l * 0.7) c h);
+
+        &:checked {
+            background: oklch(from var(--active-color) calc(l * .7) c h);
+            outline-color: oklch(from var(--active-color) calc(l * .7) c h);
+        }
+    }
+
+    &:checked {
+        border: 4px solid #fff;
+        background-color: var(--active-color);
+        outline: 2px solid var(--border-color);
+    }
+
+    &:focus {
+        outline: 2px solid var(--active-color);
+    }
+
+    &:focus-visible::before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: -0.55rem;
+        border-radius: 0.2rem;
+        border: 2px solid black;
+    }
+}
+
+.formulaire-contact .btn-envoi {
+    background-color: #1453ff;
+    font-size: 1.75rem;
+    padding: 0.9rem;
+    color: white;
+    border-radius: 5px;
+    margin-top: 2.3rem;
+    transition: background-color 350ms;
+    border: none;
+    outline-offset: 0.2rem;
+
+    &:where(:hover, :focus) {
+        background-color: #0133bb;
+    }
+}
+
+.banniere-alerte {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 1.25rem 0;
+    text-align: center;
+    margin: 0.95rem;
+    font-size: 1.25rem;
+    transform: translateY(0);
+    transition: transform 300ms;
+
+    @starting-style {
+        transform: translateY(-300%);
+    }
+
+    &.succes {
+        --base-color: #155724;
+    }
+
+    &.erreur {
+        --base-color: #721C24;
+    }
+
+    border-color: var(--base-color);
+    background-color: oklch(from var(--base-color) calc(l + 15) c h);
+    color: var(--base-color);
+}
