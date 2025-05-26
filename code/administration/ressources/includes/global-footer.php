@@ -12,6 +12,6 @@
         <li class="px-1">BAHOU Calista </li>
         <li class="px-1">BOUKHRIS Halima </li>
         <li class="px-1">CAMARA Aliya </li>
-        <li class="px-1">CHELALI Bouchra</li>
+        <li class="px-1">CHELALI Bouchra </li>
     </ul>
 </footer>
