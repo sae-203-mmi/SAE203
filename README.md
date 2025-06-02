@@ -5,11 +5,5 @@ Ici je vous conseil d'écrire des infos utiles concernant votre travail SAE 203
 
 Test Halima
 test Halima
-
-
-
-
 test
-
-
 test2
