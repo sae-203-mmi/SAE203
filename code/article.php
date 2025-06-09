@@ -10,7 +10,7 @@ $id_present_url = array_key_exists("id", $_GET);
 $entite = null;
 if ($id_present_url) {
     $id = $_GET["id"];
-    // On cherche l'article à éditer
+    // On cherche l'article à afficher
     $requete_brute = "SELECT * FROM article WHERE id = $id";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 $entite = mysqli_fetch_array($resultat_brut);
