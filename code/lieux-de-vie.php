@@ -21,6 +21,7 @@ require_once('./ressources/includes/connexion-bdd.php');
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/fonts.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
+    <link rel="icon" href="ressources/images/icone-lieudevie.png" type="image/png">
 
     <link rel="stylesheet" href="./ressources/css/lieux.css">
 </head>

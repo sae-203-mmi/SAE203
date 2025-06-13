@@ -43,6 +43,7 @@ while ($auteur = mysqli_fetch_assoc($resultat_brut)) {
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
+    <link rel="icon" href="ressources/images/icone-equipederedac.png" type="image/png">
 </head>
 
 <body>
