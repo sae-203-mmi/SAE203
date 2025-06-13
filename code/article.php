@@ -5,13 +5,16 @@ $page_active = "index";
 require_once('./ressources/includes/connexion-bdd.php');
 
 // Code à améliorer
-$id = 10;
-$requete_brute = "
-    SELECT * FROM article
-    WHERE article.id = $id
-";
+$id_present_url = array_key_exists("id", $_GET);
+
+$entite = null;
+if ($id_present_url) {
+    $id = $_GET["id"];
+    // On cherche l'article à afficher
+    $requete_brute = "SELECT * FROM article WHERE id = $id";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 $entite = mysqli_fetch_array($resultat_brut);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -54,9 +57,13 @@ $entite = mysqli_fetch_array($resultat_brut);
     <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
     <main class="conteneur-principal conteneur-1280">
         <h1 class="titre"><?php echo $entite["titre"]; ?></h1>
-        <div class="no-design">
-            <p>A vous de faire le design de l'article</p>
-            <p>Pour rappel, le contenu d'un article est détaillé dans les consignes.</p>
+        <p class="date-creation">Publié le <?php echo date("d/m/Y", strtotime($entite["date_creation"])); ?></p>
+        <div class="article-image">
+            <img src="<?php echo $entite["image"]; ?>" alt="Image de l'article" class="image-article">
+        </div>
+        <div class="article">
+            <p class="chapo"><?php echo $entite["chapo"]; ?></p>
+            <p class="contenu"><?php echo $entite["contenu"]; ?></p>
         </div>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>

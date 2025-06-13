@@ -1,0 +1,18 @@
+.banniere-erreur{
+     border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 1.25rem 0;
+    text-align: center;
+    margin: 0.95rem;
+    font-size: 1.25rem;
+    transform: translateY(0);
+    transition: transform 300ms;
+
+    @starting-style {
+        transform: translateY(-300%);
+    }
+
+    border-color: #721C24;
+    background-color: oklch(from #721C24 calc(l + 15) c h);
+    color: #721C24;
+}
