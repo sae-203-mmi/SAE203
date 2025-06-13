@@ -11,21 +11,7 @@ $requete_brute = "
 
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
-if (!$resultat_brut) {
-    die("Erreur SQL : " . mysqli_error($mysqli_link));
-}
 
-while ($auteur = mysqli_fetch_assoc($resultat_brut)) {
-    echo "<div style='border:1px solid #ccc; padding:10px; margin:10px 0'>";
-    echo "<h2>" . htmlspecialchars($auteur['prenom']) . " " . htmlspecialchars($auteur['nom']) . "</h2>";
-    echo "<p>Twitter : <a href='" . htmlspecialchars($auteur['lien_twitter']) . "'>" . htmlspecialchars($auteur['lien_twitter']) . "</a></p>";
-    
-    if (!empty($auteur['lien_avatar'])) {
-        echo "<img src='" . htmlspecialchars($auteur['lien_avatar']) . "' alt='Avatar de " . htmlspecialchars($auteur['prenom']) . "' style='max-width:100px;'>";
-    }
-
-    echo "</div>";
-}
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +29,7 @@ while ($auteur = mysqli_fetch_assoc($resultat_brut)) {
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
+    <link rel="icon" href="ressources/images/icone-equipederedac.png" type="image/png">
 </head>
 
 <body>
@@ -55,8 +42,31 @@ while ($auteur = mysqli_fetch_assoc($resultat_brut)) {
         require_once('./ressources/includes/bulle.php');
     ?>
 
+
+
+
+
+
+
     <main class="conteneur-principal conteneur-1280">
         <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
+
+<?php        if (!$resultat_brut) {
+    die("Erreur SQL : " . mysqli_error($mysqli_link));
+}
+
+while ($auteur = mysqli_fetch_assoc($resultat_brut)) {
+    echo "<div style='border:1px solid #ccc; padding:10px; margin:10px 0'>";
+    echo "<h2>" . htmlspecialchars($auteur['prenom']) . " " . htmlspecialchars($auteur['nom']) . "</h2>";
+    echo "<p>Twitter : <a href='" . htmlspecialchars($auteur['lien_twitter']) . "'>" . htmlspecialchars($auteur['lien_twitter']) . "</a></p>";
+    
+    if (!empty($auteur['lien_avatar'])) {
+        echo "<img src='" . htmlspecialchars($auteur['lien_avatar']) . "' alt='Avatar de " . htmlspecialchars($auteur['prenom']) . "' style='max-width:100px;'>";
+    }
+
+    echo "</div>";
+}
+?>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>

@@ -23,6 +23,8 @@ $URL_creation = "{$racine_URL}/creation.php";
     <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl justify-between flex py-3 px-4">
             <div>
+
+            
                 <p class="text-3xl font-bold text-gray-900">Liste auteurs</p>
                 <p class="text-gray-500 text-sm">Nombre d'auteurs : <?php echo mysqli_num_rows($resultat_brut); ?></p>
             </div>

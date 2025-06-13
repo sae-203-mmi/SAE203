@@ -6,7 +6,8 @@
         </li>
         <li <?php if ($page_active === "apropos") {
                 echo "class='active'";
-            } ?>><a href="./a-propos.php">A PROPOS</a></li>
+            } ?>>
+            <a href="./a-propos.php">A PROPOS</a></li>
         <li <?php if ($page_active === "lieux") {
                 echo "class='active'";
             } ?>><a href="./lieux-de-vie.php">LIEUX DE VIE</a></li>
