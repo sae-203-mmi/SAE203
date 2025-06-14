@@ -4,7 +4,11 @@ $page_active = "index";
 
 require_once('./ressources/includes/connexion-bdd.php');
 
-$requete_brute = "SELECT * FROM article";
+$requete_brute = "
+    SELECT article.*, auteur.nom AS auteur_nom, auteur.prenom AS auteur_prenom
+    FROM article
+    LEFT JOIN auteur ON article.auteur_id = auteur.id
+    ORDER BY date_creation DESC";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 ?>
 <!DOCTYPE html>
@@ -60,6 +64,10 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                                 <p class="date">Publié le <time datetime="<?php echo $date_creation->format('d/m/Y H:i:s'); ?>">
                                             <?php echo $date_creation->format('d/m/Y à H:i:s'); ?>
                                         </time>
+                                         <?php if (!empty($article["auteur_nom"])): ?>
+                                             | <span class="auteur">Par : <?php echo htmlspecialchars($article["auteur_prenom"] . ' ' . $article["auteur_nom"]); ?></span>
+                                         <?php endif; ?>
+                                            
                                 </p>
                             </section>
                         </a>

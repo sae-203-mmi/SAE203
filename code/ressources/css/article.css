@@ -1,0 +1,76 @@
+.article-detail {
+    padding: 2rem 0;
+    line-height: 1.6;
+}
+
+.article-detail .titre {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+.article-detail .date,
+.article-detail .date-creation {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.article-detail .article-image {
+    display: flex;
+    justify-content: center;
+}
+
+.article-detail .image-article {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    object-fit: cover;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.article-detail .article {
+    margin-top: 1rem;
+}
+
+.article-detail .chapo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.article-detail .contenu {
+    font-size: 1.05rem;
+    color: #4a5568;
+    white-space: pre-line;
+}
+
+.article-detail .no-design {
+    padding: 0.5rem 1rem;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.article-detail .auteur {
+    font-style: italic;
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-detail .titre,
+.article-detail .date,
+.article-detail .date-creation,
+.article-detail .auteur,
+.article-detail .chapo,
+.article-detail .article,
+.article-detail .contenu {
+    text-align: left;
+}
