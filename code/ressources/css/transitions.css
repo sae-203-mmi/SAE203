@@ -23,7 +23,7 @@
 }
  
 .article:hover .textes, .article:focus .textes {
-    padding-left: 15px;
+    padding-left: 0.938rem;
 }
  
 .article .titre {
@@ -78,7 +78,7 @@
 }
 
 .article:hover .textes, .article:focus .textes {
-    padding-left: 15px;
+    padding-left: 0.938rem;
 }
 
 .article .titre {
