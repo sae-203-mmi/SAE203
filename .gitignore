@@ -1,2 +1,3 @@
 code/.env.dev
 code/.env.prod
+.DS_Store
