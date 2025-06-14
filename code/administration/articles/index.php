@@ -6,7 +6,7 @@ $requete_brute = '
     SELECT
         ar.id,
         ar.titre AS titre_article,
-        ar.titre AS chapo_article,
+        ar.chapo AS chapo_article,
         ar.contenu AS contenu_article,
         ar.image AS image_article,
         ar.lien_yt AS lien_yt_article,
