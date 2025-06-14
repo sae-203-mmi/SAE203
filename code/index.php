@@ -10,7 +10,7 @@ $requete_brute = "
     FROM article
     LEFT JOIN auteur ON article.auteur_id = auteur.id
     ORDER BY date_creation DESC";
-    
+
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 ?>
 <!DOCTYPE html>
@@ -92,8 +92,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     </main>
     <?php
         require_once('./ressources/includes/footer.php');
-        // mysqli_free_result($resultat_brut);
-        // mysqli_close($mysqli_link);
+       
     ?>
 </body>
 

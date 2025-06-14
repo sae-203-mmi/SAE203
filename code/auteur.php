@@ -63,10 +63,6 @@ if ($result_articles && mysqli_num_rows($result_articles) > 0) {
     <?php require_once('./ressources/includes/top-navigation.php'); ?>
     <?php require_once('./ressources/includes/bulle.php'); ?>
 
-    <?php
-    // facultatif
-    // require_once('./ressources/includes/bulle.php');
-    ?>
 
     <main class="conteneur-principal conteneur-1280">
     <p class="lien-retour"> <a href="./equipe-de-redac.php" >← Retour à l'équipe</a></p> 
@@ -85,7 +81,7 @@ if ($result_articles && mysqli_num_rows($result_articles) > 0) {
                         </a>
                     </p>
                 <?php endif; ?>
-                <!-- Tu peux ajouter bio, email, ou autre ici -->
+                
             </section>
 
             
