@@ -4,6 +4,7 @@ $page_active = "index";
 
 require_once('./ressources/includes/connexion-bdd.php');
 
+
 $requete_brute = "SELECT * FROM article";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 ?>
@@ -23,6 +24,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
+    <link rel="stylesheet" href="./ressources/css/transitions.css">
 
     <link rel="stylesheet" href="./ressources/css/accueil.css">
 </head>
@@ -48,7 +50,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                      -->
                         <a href="article.php?id=<?php echo $article["id"]; ?>" class='article' id="<?php echo $article["id"]; ?>">
                             <div>
-                                <img src='ressources/images/image-article.png' alt=''>
+                            <img src='<?php echo htmlspecialchars($article["image"]); ?>' alt='<?php echo htmlspecialchars($article["titre"]); ?>'>
                             </div>
                             <section class='textes'>
                                 <h2 class='titre'>

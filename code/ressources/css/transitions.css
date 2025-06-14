@@ -1,0 +1,103 @@
+.article {
+    transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    background: white;
+}
+ 
+.article:hover, .article:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+ 
+.article img {
+    transition: transform 0.3s ease;
+}
+ 
+.article:hover img, .article:focus img {
+    transform: scale(1.05);
+}
+ 
+.article .textes {
+    transition: padding 0.3s ease;
+}
+ 
+.article:hover .textes, .article:focus .textes {
+    padding-left: 15px;
+}
+ 
+.article .titre {
+    transition: color 0.3s ease;
+}
+ 
+.article:hover .titre, .article:focus .titre {
+    color: #ef509f;  
+}
+ 
+/* Pour assurer l'accessibilité, on ajoute aussi les effets au focus */
+.article:focus {
+    outline: 2px solid #ef509f;
+    outline-offset: 2px;
+}
+.description {
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+ .article {
+    transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    background: white;
+    outline: none; /* Pour éviter le contour par défaut */
+}
+
+.article:hover, .article:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.article:focus {
+    outline: 2px solid #0078d4; /* Ajoute un contour visible au focus clavier */
+    outline-offset: 2px;
+}
+
+.article img {
+    transition: transform 0.3s ease;
+}
+
+.article:hover img, .article:focus img {
+    transform: scale(1.05);
+}
+
+.article .textes {
+    transition: padding 0.3s ease;
+}
+
+.article:hover .textes, .article:focus .textes {
+    padding-left: 15px;
+}
+
+.article .titre {
+    transition: color 0.3s ease;
+}
+.article .titre {
+    transition: color 0.3s ease;
+}
+
+.article:hover .titre,
+.article:focus .titre {
+    color: #882dd7; /* Choisis la couleur que tu veux */
+}
+
+.article {
+    transition: transform 0.3s ease;
+    position: relative;
+    top: 0;
+    background: white;
+    outline: none; /* Pour retirer le contour par défaut */
+}
+

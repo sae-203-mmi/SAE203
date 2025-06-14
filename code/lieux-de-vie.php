@@ -43,7 +43,7 @@ require_once('./ressources/includes/connexion-bdd.php');
             <ul class="liste-lieux">
                 <li>
                     <div>
-                        <img src="https://placehold.co/522x435" alt="">
+                        <img src="./ressources/images/BU.jpg" alt="Bibliothèque Universitaire de l'IUT de Sarcelles">
                     </div>
                     <section class="textes">
                         <h2 class="titre">Bibliothèque universitaire</h2>
@@ -54,7 +54,7 @@ require_once('./ressources/includes/connexion-bdd.php');
                 </li>
                 <li>
                     <div>
-                        <img src="https://placehold.co/522x435" alt="">
+                        <img src="./ressources/images/restaurant.jpg" alt="Restaurant de l'IUT de Sarcelles vu de l'extérieur">
                     </div>
                     <section class="textes">
                         <h2 class="titre">Se restaurer</h2>
@@ -68,7 +68,7 @@ require_once('./ressources/includes/connexion-bdd.php');
                 </li>
                 <li>
                     <div>
-                        <img src="https://placehold.co/522x435" alt="">
+                        <img src="./ressources/images/fablab.jpg" alt="Station Numix de l'extérieur">
                     </div>
                     <section class="textes">
                         <h2 class="titre">Réseau des fablabs de CY Cergy Paris Université</h2>

@@ -1,0 +1,56 @@
+.bulle-icone.violet {
+    background-color: #a40ceb;
+}
+
+.bulle-icone-bordure.violet {
+    background-color: #f4bafa;
+}
+
+.lien-retour {
+    margin-top : 2.5rem;
+    color: blue;
+    text-decoration: underline;
+} 
+.lien-retour a:hover {
+    background-color:#6a5acd ;
+    color : white;
+}
+
+.fiche-auteur {
+    max-width: 800px;
+    margin-top : 2.5rem;
+    margin-bottom : 2.5rem;
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+    gap:30px;
+}
+
+.fiche-auteur img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #6a5acd;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+.fiche-auteur h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.fiche-auteur .infos-auteur p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+
+.liste-articles:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

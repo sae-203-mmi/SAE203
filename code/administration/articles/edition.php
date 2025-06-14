@@ -1,6 +1,7 @@
 <?php
 require_once('../../ressources/includes/connexion-bdd.php');
 
+
 $page_courante = "articles";
 
 $errors = [];

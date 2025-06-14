@@ -2,7 +2,9 @@
 $couleur_bulle_classe = "violet";
 $page_active = "equipe";
 
+
 require_once('./ressources/includes/connexion-bdd.php');
+
 
 
 $requete_brute = "
@@ -29,48 +31,40 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
+    <link rel="stylesheet" href="./ressources/css/liste-auteurs.css">
     <link rel="icon" href="ressources/images/icone-equipederedac.png" type="image/png">
 </head>
 
 <body>
-
-        <?php require_once('./ressources/includes/top-navigation.php'); ?>
-    <?php
- 
-        // A supprimer si vous n'en avez pas besoin.
-        // Mettre une couleur dédiée pour cette bulle, si vous gardez la bulle
-        require_once('./ressources/includes/bulle.php');
-    ?>
-
-
-
-
-
-
+    <?php require_once('./ressources/includes/top-navigation.php'); ?>
+    <?php require_once('./ressources/includes/bulle.php'); ?>
 
     <main class="conteneur-principal conteneur-1280">
-        <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
+        <h1 class="titre">L'équipe de rédaction</h1>
 
-<?php        if (!$resultat_brut) {
-    die("Erreur SQL : " . mysqli_error($mysqli_link));
-}
+        <?php
+        if (!$resultat_brut) {
+            die("Erreur SQL : " . mysqli_error($mysqli_link));
+        }
+        ?>
 
-while ($auteur = mysqli_fetch_assoc($resultat_brut)) {
-    echo "<div style='border:1px solid #ccc; padding:10px; margin:10px 0'>";
-    echo "<h2>" . htmlspecialchars($auteur['prenom']) . " " . htmlspecialchars($auteur['nom']) . "</h2>";
-    echo "<p>Twitter : <a href='" . htmlspecialchars($auteur['lien_twitter']) . "'>" . htmlspecialchars($auteur['lien_twitter']) . "</a></p>";
-    
-    if (!empty($auteur['lien_avatar'])) {
-        echo "<img src='" . htmlspecialchars($auteur['lien_avatar']) . "' alt='Avatar de " . htmlspecialchars($auteur['prenom']) . "' style='max-width:100px;'>";
-    }
+        <section class="liste-auteurs">
+        <?php while ($auteur = mysqli_fetch_assoc($resultat_brut)) { ?>
+            <a href="auteur.php?id=<?php echo $auteur["id"]; ?>" class="carte-auteur">
+                <img src="<?php echo htmlspecialchars($auteur["lien_avatar"]); ?>" alt="Avatar de <?php echo htmlspecialchars($auteur["prenom"]); ?>">
+                <h2 class="nom-auteur"><?php echo htmlspecialchars($auteur["prenom"] . " " . $auteur["nom"]); ?></h2>
+            </a>
+        <?php } ?>
+        </section>
 
-    echo "</div>";
-}
-?>
     </main>
-    <?php require_once('./ressources/includes/footer.php'); ?>
-</body>
 
+    <?php 
+        require_once('./ressources/includes/footer.php');
+        mysqli_free_result($resultat_brut);
+        mysqli_close($mysqli_link);
+    ?>
+</body>
 </html>
 
 

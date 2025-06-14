@@ -4,6 +4,7 @@ $page_active = "index";
 
 require_once('./ressources/includes/connexion-bdd.php');
 
+
 // Code à améliorer
 $id_present_url = array_key_exists("id", $_GET);
 

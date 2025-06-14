@@ -1,6 +1,7 @@
 <?php
 require_once '../../ressources/includes/connexion-bdd.php';
 
+
 $requete_brute = "SELECT * FROM auteur";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 

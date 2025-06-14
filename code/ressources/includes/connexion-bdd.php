@@ -75,6 +75,7 @@ try {
 
     // On se connecte à notre base de données
     $mysqli_link = mysqli_connect($serveur_BDD, $_ENV['UTILISATEUR_BDD'], $_ENV['MDP_BDD'], $nom_BDD);
+    mysqli_set_charset($mysqli_link, "utf8mb4");
 } catch (Exception $e) {
     die('Erreur : ' . $e->getCode() . " - " . $e->getMessage());
 }
